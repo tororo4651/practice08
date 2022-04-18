@@ -6,12 +6,17 @@
 
 
 
-html {
-  font-size: 100%;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
+  font-family: 'Noto Sans JP', sans-serif;
+  color: g.$textColor;
 }
 
 ul,
@@ -19,13 +24,17 @@ ol {
   list-style-type: none;
 }
 
+a {
+  text-decoration-line: none;
+  color: inherit;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
 img {
   max-width: 100%;
   height: auto;
   vertical-align: bottom;
-}
-
-a {
-  text-decoration-line: none;
-  color: inherit;
 }

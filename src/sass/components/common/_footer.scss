@@ -3,3 +3,32 @@
 
 // 変数、ミックスイン、関数
 @use "../../global" as g;
+
+
+
+.footer {
+  padding-block: 100px;
+  background-color: g.$mainColor;
+  display: flex;
+  flex-direction: column;
+  row-gap: 44px;
+  align-items: center;
+
+  &__logo {
+    --min-size: 120;
+    --max-size: 200;
+    width: var(--clamp-size);
+  }
+
+  &__nav {
+
+    &List {
+      --min-size: 14;
+      --max-size: 18;
+      font-size: var(--clamp-size);
+      color: g.$whiteColor;
+      display: flex;
+      column-gap: 2em;
+    }
+  }
+}

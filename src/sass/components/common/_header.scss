@@ -1,5 +1,22 @@
 // ヘッダー
 
 
-// 変数、ミックスイン、関数
+// 変数・ミックスイン・関数
 @use "../../global" as g;
+
+
+
+.header {
+  padding-inline: g.$size1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__logo {
+    width: max(94px, g.$size2);
+  }
+
+  &__btn {
+    z-index: 3;
+  }
+}

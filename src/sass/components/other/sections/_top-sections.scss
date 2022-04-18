@@ -1,0 +1,367 @@
+// セクション・トップページ
+
+
+// 変数、ミックスイン、関数
+@use "../../../global" as g;
+
+
+
+// 共通
+.topSection01,
+.topSection02 {
+  --min-size: 140;
+  --max-size: 288;
+  margin-block-end: var(--clamp-size);
+
+  &__image01,
+  &__image02 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    font-family: "object-fit: cover;";
+  }
+
+  &__text {
+    --min-size: 14;
+    --max-size: 16;
+    --min-size02: 25;
+    --max-size02: 45;
+    margin-block-end: var(--clamp-size02);
+    max-width: 29em;
+    font-size: var(--clamp-size);
+    line-height: 1.8;
+  }
+}
+
+
+
+// 01
+.topSection01 {
+
+  &__inner {
+    row-gap: 24px;
+  }
+
+  &__content {
+    display: contents;
+  }
+
+  &__contentHead {
+    grid-area: 1 / 2 / 2 / -2;
+  }
+
+  &__figure01 {
+    grid-area: 2 / 1 / 3 / -2;
+    height: 399px;
+  }
+
+  &__figure02 {
+    grid-area: 3 / 4 / 4 / -1;
+    height: 173px;
+  }
+
+  &__contentBody {
+    grid-area: 4 / 2 / 5 / 5;
+  }
+
+  &::before {
+    left: 0%;
+    right: 9.87%;
+    top: 36.93%;
+    bottom: -5.72%;
+  }
+
+  &::after {
+    left: 38.4%;
+    bottom: -14.51%;
+    transform: rotate(137deg);
+  }
+
+
+  @include g.mq(md-min) {
+
+    &__inner {
+      margin-inline: g.$size1 g.$size2;
+      grid-template-columns:
+        g.$size2 630fr 377fr;
+      grid-template-rows: repeat(3, auto);
+      gap: 0 g.$half-size1;
+      grid-template-areas:
+        ". figure01 ."
+        "number heading figure02"
+        ". body figure02";
+
+      &::after {
+        right: 21.26%;
+        top: 27.26%;
+        transform: rotate(-153deg);
+      }
+    }
+
+    &__contentHead {
+      display: contents;
+    }
+
+    &__number {
+      grid-area: number;
+      align-self: baseline;
+    }
+
+    &__heading {
+      grid-area: heading;
+      align-self: baseline;
+      margin-block: g.$size1 g.$half-size1;
+    }
+
+    &__contentBody {
+      grid-area: body;
+    }
+
+    &__figure01 {
+      grid-area: figure01;
+      height: auto;
+      aspect-ratio: 630 / 792;
+    }
+
+    &__figure02 {
+      grid-area: figure02;
+      height: auto;
+      margin-block-start: -34px;
+    }
+
+    &::before {
+      left: 0%;
+      right: 15%;
+      top: 30.75%;
+      bottom: -8.02%;
+    }
+
+    &::after {
+      left: 10.05%;
+      bottom: -12.53%;
+      transform: rotate(151deg);
+    }
+  }
+}
+
+
+
+// 02 {
+.topSection02 {
+  row-gap: 24px;
+
+  &__content {
+    display: contents;
+  }
+
+  &__contentHead {
+    grid-area: 1 / 2 / 2 / -2;
+    text-align: right;
+  }
+
+  &__contentBody {
+    grid-area: 4/4/5/-2;
+  }
+
+  &__figure01 {
+    grid-area: 2 / 2 / 3 / -1;
+    height: 399px;
+  }
+
+  &__figure02 {
+    grid-area: 3/1/4/-4;
+    height: 173px;
+  }
+
+  &::before {
+    top: 34.55%;
+    right: 0;
+    bottom: -5.81%;
+    left: 9.87%;
+  }
+
+  &::after {
+    bottom: -14.85%;
+    left: 68.23%;
+    transform: rotate(-159deg);
+  }
+
+
+  @include g.mq() {
+    padding-inline-start: g.$size1;
+    grid-template-columns:
+      540fr 684fr;
+    grid-template-rows:
+      repeat(2, auto);
+    grid-template-areas:
+      "figure01 figure01"
+      "figure02 content";
+    gap: g.$size1;
+
+    &__content {
+      display: revert;
+      grid-area: content;
+      margin-inline-end: g.$size1;
+    }
+
+    &__contentHead {
+      text-align: start;
+    }
+
+    &__heading {
+      margin-block: g.$half-size1;
+    }
+
+    &__figure01 {
+      grid-area: figure01;
+      height: auto;
+      aspect-ratio: 1224/731;
+      margin-inline-start: g.$size2;
+    }
+
+    &__figure02 {
+      grid-area: figure02;
+      height: auto;
+      // margin-inline-start: g.$size1;
+    }
+
+    &::before {
+      top: -7.29%;
+      right: 0;
+      bottom: -7.29%;
+      left: 32.64%;
+    }
+
+    &::after {
+      bottom: -17.24%;
+      left: 63.48%;
+      transform: rotate(-139deg);
+    }
+  }
+}
+
+
+
+// 03
+.topSection03 {
+  row-gap: 44px;
+
+  > * {
+    grid-column: 2 / -2;
+  }
+
+  &__heading {
+    margin-block-end: 24px;
+  }
+
+  &__text {
+    --min-size: 14;
+    --max-size: 16;
+    font-size: var(--clamp-size);
+    line-height: 1.8;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+
+    &Figure {
+      height: 360px;
+      margin-block-end: 12px;
+    }
+
+    &Image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      font-family: "object-fit: cover;";
+    }
+
+    &Heading {
+      --min-size: 16;
+      --max-size: 18;
+      font-size: var(--clamp-size);
+      font-weight: 400;
+    }
+  }
+
+  &::before {
+    top: 30.12%;
+    right: 0;
+    bottom: 13.63%;
+    left: 0;
+  }
+
+  &::after {
+    bottom: -4.81%;
+    left: 23.21%;
+    transform: rotate(164deg);
+  }
+
+
+  @include g.mq(md-min) {
+    &__content {
+      display: grid;
+      grid-template-columns:
+        g.$size2 1fr;
+      grid-template-rows:
+        repeat(2, auto);
+      grid-template-areas:
+        "number heading"
+        ". text";
+      column-gap: g.$half-size1;
+    }
+
+    &__contentHead {
+      display: contents;
+    }
+
+    &__number {
+      align-self: baseline;
+    }
+
+    &__heading {
+      align-self: baseline;
+      margin-block-end: g.$half-size1;
+    }
+
+    &__text {
+      grid-area: text;
+      max-width: 34em;
+    }
+  }
+
+
+  @include g.mq(lg-min) {
+
+    &__list {
+      flex-direction: row;
+      justify-content: space-evenly;
+
+      &Item {
+        flex: 1;
+        max-width: 335px;
+
+        &:nth-child(2) {
+          margin-block-start: 140px;
+        }
+
+        &:nth-child(3) {
+          margin-block-start: 280px;
+        }
+      }
+    }
+
+    &::before {
+      inset: 33.61% 0 10.37% 0;
+    }
+
+    &::after {
+      --max-size: 80;
+      left: 28.86%;
+      bottom: 4.85%;
+      transform: rotate(138deg);
+    }
+  }
+}

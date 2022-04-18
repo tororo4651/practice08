@@ -1,0 +1,46 @@
+// パーツ・装飾
+
+
+// 変数、ミックスイン、関数
+@use "../../global/" as g;
+
+
+
+// 四角形・三角形
+.primaryDecor {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background-color: g.$lightMainColor;
+  }
+
+  &::after {
+    --min-size: 47;
+    --max-size: 61;
+    content: url(/images/common/accent.svg);
+    position: absolute;
+    width: var(--clamp-size);
+    line-height: 0;
+  }
+}
+
+
+
+// 三角形
+.secondaryDecor {
+
+  @include g.mq() {
+    &::after {
+      --min-size: 47;
+      --max-size: 100;
+      content: url(/images/common/accent.svg);
+      position: absolute;
+      width: var(--clamp-size);
+      line-height: 0;
+    }
+  }
+
+}

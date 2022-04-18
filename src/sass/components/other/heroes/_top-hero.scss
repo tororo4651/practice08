@@ -1,5 +1,144 @@
-// ヒーローイメージ・トップページ
+// ヒーローイメージ
+// トップページ
 
 
 // 変数、ミックスイン、関数
-@use "../../../global" as g;
+@use "../../../global/" as g;
+
+
+
+.topHero {
+  --min-size: 15;
+  --max-size: 0;
+  position: relative;
+  margin-block: clamp(0px, var(--fluid-size), 15px) 140px;
+  row-gap: 44px;
+
+  &__content {
+    display: contents;
+  }
+
+  &__contentHead {
+    grid-column: 2 / -2;
+    grid-row: 1;
+    z-index: 1;
+    text-align: right;
+  }
+
+  &__heading {
+    background: linear-gradient(92.21deg, #54603F 6.06%, #A2CF4F 95.93%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Lora', serif;
+    font-size: var(--clamp-size);
+    font-weight: 400;
+  }
+
+  &__text {
+    --min-size: 14;
+    --max-size: 16;
+    grid-column: 2 / -2;
+    font-size: var(--clamp-size);
+    line-height: 1.8;
+  }
+
+  &__figure01 {
+    --min-size: 39;
+    --max-size: 130;
+    grid-column: 1 / -1;
+    grid-row: 1;
+    height: 588px;
+    margin-block-start: var(--clamp-size);
+  }
+
+  &__figure02 {
+    grid-column: 3 / -1;
+    height: 180px;
+  }
+
+  &__image01,
+  &__image02 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &::before {
+    left: 18.67%;
+    right: 0;
+    top: 23.69%;
+    bottom: -8.24%;
+  }
+
+  &::after {
+    right: 11.2%;
+    bottom: -11.95%;
+    transform: rotate(-159deg);
+  }
+
+
+  @include g.mq {
+    margin-block-end: g.$size1 * -1;
+    grid-template-columns:
+      1026fr 378fr;
+    grid-template-rows: auto g.$size4;
+    gap: 0 g.$half-size1;
+
+    &__content {
+      display: revert;
+      grid-area: 1 / 1 / 2 / -1;
+      z-index: 1;
+      margin-inline-end: g.$size2;
+    }
+
+    &__text {
+      width: 21em;
+      margin-block-start: 2em;
+      margin-inline-start: auto;
+    }
+
+    &__figure01 {
+      grid-area: 1 / 1;
+      height: auto;
+      aspect-ratio: 1026 / 772;
+    }
+
+    &__figure02 {
+      grid-area: 1 / 2 / -1;
+      align-self: end;
+      height: auto;
+      aspect-ratio: 378 / 648;
+    }
+
+    &::before {
+      left: 47.43%;
+      right: 10%;
+      top: 40.84%;
+      bottom: 16.39%;
+    }
+
+    &::after {
+      right: 83.6%;
+      bottom: 87.76%;
+      transform: rotate(154deg);
+    }
+  }
+
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    &__content {
+      display: contents
+    }
+
+    &__contentHead {
+      grid-area: inherit;
+      margin-inline-end: inherit;
+    }
+
+    &__text {
+      grid-area: 2 / 1;
+      width: 80%;
+      margin-inline-start: g.$size1;
+    }
+  }
+}

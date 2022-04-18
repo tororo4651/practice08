@@ -19,11 +19,13 @@
   }
 }
 
+
 @mixin mq-min($width: 768) {
   @media (min-width: $width + 'px') {
     @content;
   }
 }
+
 
 @mixin mq-max($width: 767) {
   @media (max-width: $width + px) {
@@ -34,8 +36,7 @@
 
 
 // フォントサイズ
-@mixin fz($size: 24, $root: 16(10)) {
-  font-size: $size + px;
+@mixin fz($size: 24, $root: 16) {
   font-size: math.div($size, $root) * 1rem;
   // font-size: calc($size / $root * 1rem);
 }

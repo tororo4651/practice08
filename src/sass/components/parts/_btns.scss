@@ -1,5 +1,38 @@
-// ボタン
+// パーツ・ボタン
 
 
 // 変数、ミックスイン、関数
 @use "../../global" as g;
+
+
+
+// プライマリ
+.primaryBtn {
+  --min-size: 20;
+  --max-size: 36;
+  font-size: var(--clamp-size);
+  display: flex;
+
+  &__link {
+    padding: 1em;
+    border-radius: 2em;
+    background-color: g.$accentColor;
+    color: g.$whiteColor;
+    font-family: 'Noto Serif JP', serif;
+    font-weight: 500;
+  }
+
+  &::before,
+  &::after {
+    width: 2em;
+    margin-block-start: -1em;
+  }
+
+  &::before {
+    content: url(/images/common/bars-left.svg);
+  }
+
+  &::after {
+    content: url(/images/common/bars-right.svg);
+  }
+}

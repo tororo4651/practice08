@@ -1,8 +1,8 @@
 // 変数
-@forward "variables";
+@forward "_variables.scss";
 
 // ミックスイン
-@forward "_mixins";
+@forward "mixins.scss";
 
 // 関数
-@forward "functions.scss";
+@forward "functions";

@@ -1,11 +1,17 @@
-// ベース
-@use "bases/_bases.scss";
+// CSSカスタムプロティ
+@use "settings/_variables.scss";
 
 
 
 
 // レイアウト
-@use "layouts/_layouts.scss";
+@use "grids/_grids.scss";
+
+
+
+
+// ベース
+@use "bases/_bases.scss";
 
 
 
@@ -13,13 +19,19 @@
 // コンポーネント・パーツ
 
 // 見出し
-@use "components/parts/_headings.scss";
+@use "components/parts/headings";
 
 // ボタン
 @use "components/parts/btns";
 
 // リンク
-@use "components/parts/_links.scss";
+@use "components/parts/links";
+
+// ナンバー
+@use "components/parts/_numbers.scss";
+
+// 装飾
+@use "components/parts/_decors";
 
 
 
@@ -37,40 +49,23 @@
 
 
 
-
 // コンポーネント・その他
 
-// メインコンテンツ・トップページ
-@use "components/other/mains/_top-main.scss";
-
-
 // セクション
-@use "components/other/sections/_sections.scss";
-// セクション・トップページ
-@use "components/other/sections/_top-section.scss";
+// トップページ
+@use "components/other/sections/_top-sections.scss";
 
-
-// ディビジョン
-@use "components/other/divisions/_divisions.scss";
-
-
-// ヒーローイメージ・トープページ
+// ヒーローイメージ
+// トップページ
 @use "components/other/heroes/top-hero";
 
-
-// カルーセル・プライマリ
-@use "components/other/carousels/_primary-carousel.scss";
-
-
-// SNS
-@use "components/other/sns/_sns.scss";
-
-
-// 動画
-@use "components/other/videos/top-video";
+// CTA
+// トップぺージ
+@use "components/other/cta/top-cta.scss";
 
 
 
 
-// ユーティリティクラス・Utilityクラス・汎用クラス・ヘルパークラス
+
+// ユーティリティクラス・Utiltyクラス・汎用クラス・ヘルパークラス
 @use "utilities/_utilities.scss";

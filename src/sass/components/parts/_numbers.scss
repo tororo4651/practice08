@@ -1,0 +1,26 @@
+// パーツ・ナンバー
+
+
+// 変数、ミックスイン、関数
+@use "../../global/index" as g;
+
+
+
+// プライマリ
+.primaryNumber {
+  background: linear-gradient(
+    0.96deg,
+    #54603F 0.35%,
+    #A2CF4F 182.75%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: 'Lora', serif;
+  font-size: 6.4rem;
+
+  @include g.mq() {
+    --min-size: 60;
+    --max-size: 103;
+    --min-viewport: 768;
+    font-size: var(--clamp-size);
+  }
+}
